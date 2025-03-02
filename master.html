@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上海城市绿色交流社区 - 管理员界面</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 引入腾讯地图API -->
+    <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=YOUR_API_KEY"></script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <a href="#" onclick="showSearch()" class="sidebar-link fade-in">搜索</a>
+        <a href="#" onclick="showPost()" class="sidebar-link fade-in">发帖</a>
+    </div>
+    <div class="main-content">
+        <div id="search-section" class="section fade-in" style="display: none;">
+            <h2>搜索帖子</h2>
+            <label for="search-id">编号：</label>
+            <input type="text" id="search-id">
+            <label for="search-date">日期：</label>
+            <input type="date" id="search-date">
+            <button class="btn" onclick="searchPosts()">搜索</button>
+            <div id="search-results"></div>
+        </div>
+        <div id="post-section" class="section fade-in" style="display: none;">
+            <h2>发布帖子</h2>
+            <label for="post-text">文本内容：</label>
+            <textarea id="post-text"></textarea>
+            <label for="post-image">图片内容：</label>
+            <input type="file" id="post-image">
+            <div id="post-map" class="map" style="width: 100%; height: 300px;"></div>
+            <input type="hidden" id="post-location">
+            <button class="btn" onclick="publishPost()">发布</button>
+        </div>
+    </div>
+    <div id="message-box" class="message-box"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
